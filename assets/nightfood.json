@@ -1,0 +1,98 @@
+[
+  {
+    "foodname": "陳家阿嬤拔絲地瓜",
+    "image": "assets/地瓜.png",
+    "location": "花園夜市",
+    "district": "北區"
+  },
+  {
+    "foodname": "紅妃大腸香腸",
+    "image": "assets/香腸.png",
+    "location": "花園夜市",
+    "district": "北區"
+  },
+  {
+    "foodname": "皇佳烤鴨夾餅",
+    "image": "assets/烤鴨.png",
+    "location": "花園夜市",
+    "district": "北區"
+  },
+  {
+    "foodname": "二師兄滷味",
+    "image": "assets/滷味.png",
+    "location": "花園夜市",
+    "district": "北區"
+  },
+  {
+    "foodname": "陳大民麻辣鴨血",
+    "image": "assets/鴨血.png",
+    "location": "花園夜市",
+    "district": "北區"
+  },
+  {
+    "foodname": "古曼蔥油餅",
+    "image": "https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1645335710/blog/pfp2updmbl7kukh4zemk.webp",
+    "location": "大東夜市",
+    "district": "東區"
+  },
+  {
+    "foodname": "二師兄滷味",
+    "image": "assets/滷味.png",
+    "location": "大東夜市",
+    "district": "東區"
+  },
+  {
+    "foodname": "膳品香酥排骨",
+    "image": "https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1660300191/blog/k6eqwgdm005xcu3na45b.webp",
+    "location": "大東夜市",
+    "district": "東區"
+  },
+  {
+    "foodname": "阿桂嬤祖傳養生湯",
+    "image": "https://cdn2.ettoday.net/images/7485/d7485648.jpg",
+    "location": "大東夜市",
+    "district": "東區"
+  },
+  {
+    "foodname": "三輪車大腸香腸",
+    "image": "https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1660300745/blog/mywnq52pcycbtfo8dp5i.webp",
+    "location": "武聖夜市",
+    "district": "中西區"
+  },
+  {
+    "foodname": "阿三哥蚵仔煎",
+    "image": "https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1660300922/blog/hcniremilwteobzk55oa.webp",
+    "location": "武聖夜市",
+    "district": "中西區"
+  },
+  {
+    "foodname": "阿堯師雞蛋糕",
+    "image": "https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1660301201/blog/h9b1spkj3w9o8cj5xlf5.webp",
+    "location": "武聖夜市",
+    "district": "中西區"
+  },
+  {
+    "foodname": "麥當勞",
+    "image": "assets/iu.png",
+    "location": "小北觀光夜市",
+    "district": "北區"
+  },
+  {
+    "foodname": "麥當勞",
+    "image": "assets/iu.png",
+    "location": "小北新成功夜市",
+    "district": "北區"
+  },
+  {
+    "foodname": "麥當勞",
+    "image": "assets/iu.png",
+    "location": "保華夜市",
+    "district": "東區"
+  },
+  {
+    "foodname": "麥當勞",
+    "image": "assets/iu.png",
+    "location": "仁和夜市",
+    "district": "東區"
+  }
+]

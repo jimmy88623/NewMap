@@ -1,22 +1,19 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:new_map/pages/settingpage.dart';
 import 'package:new_map/pages/schedulepage.dart';
-import 'package:new_map/pages/mappage.dart';
+import 'package:new_map/pages/camera/camera.dart';
 import 'package:new_map/pages/playpage.dart';
 
-
 class homepage extends StatefulWidget {
-  const homepage({super.key});
+  const homepage({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _homepageState();
 }
 
 class _homepageState extends State<homepage> {
-  TextEditingController _begindateController = TextEditingController();
-  TextEditingController _enddateController = TextEditingController();
-
   int _currentPageIndex = 0;
 
   void _onPageChanged(int index) {
@@ -39,10 +36,7 @@ class _homepageState extends State<homepage> {
         currentIndex: _currentPageIndex,
         onTap: (currentPageIndex) {
           print("currentPageIndex : $currentPageIndex");
-          //即時更新currentPageIndex
           _onPageChanged(currentPageIndex);
-          //跳轉到對應index頁面
-          _buildScreen()[currentPageIndex];
         },
         items: const [
           BottomNavigationBarItem(
@@ -63,37 +57,29 @@ class _homepageState extends State<homepage> {
           ),
         ],
       ),
-      body: _buildScreen()[_currentPageIndex],
+      body: FutureBuilder<List<Widget>>(
+        future: _buildScreen(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else {
+            return snapshot.data![_currentPageIndex];
+          }
+        },
+      ),
     );
   }
 
-  List<Widget> _buildScreen() {
+  Future<List<Widget>> _buildScreen() async {
+    final cameras = await availableCameras();
+    final firstCamera = cameras.first;
     return [
-      schedulepage(),
-      mappage(),
+      schedulePage(),
+      Camerapage(camera: firstCamera),
       playpage(),
       settingpage(),
     ];
-  }
-
-  Future<void> _selectDate(bool isBeginDate) async {
-    DateTime? picked = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(2000),
-        lastDate: DateTime(2100));
-    if (picked != null) {
-      setState(() {
-        if (isBeginDate) {
-          _begindateController.text = picked.toString().split(" ")[0];
-          print(
-              "current _begindateController value is :　${_begindateController.text}");
-        } else {
-          _enddateController.text = picked.toString().split(" ")[0];
-          print(
-              "current _enddateController value is :　${_enddateController.text}");
-        }
-      });
-    }
   }
 }
